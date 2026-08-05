@@ -1,5 +1,8 @@
 import asyncio
 import logging
+import os
+from threading import Thread
+from flask import Flask
 from aiogram import Bot, Dispatcher, F, types
 from aiogram.filters import Command
 from aiogram.types import Message
@@ -7,6 +10,17 @@ from google import genai
 from google.genai import types as genai_types
 import requests
 
+# --- Render uxlab qolmasligi va port talabini qondirish uchun Flask server ---
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "DehqonAI bot ishlayapti! 🌱"
+
+def run_web():
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+
+# --- Sizning asl kodingiz ---
 TOKEN = "8626509225:AAG8LAYBMuIX3bUCM87BOxaXjT6CknkB_e8"
 GEMINI_API_KEY = "AQ.Ab8RN6L-xN1naGR6jTzynhhFzJCqUI86QD2KCThOrh4aJA7MuA"
 
@@ -48,7 +62,6 @@ async def handle_photo(message: Message):
         img_response = requests.get(image_url)
         img_bytes = img_response.content
 
-        # Model nomi gemini-3.5-flash ga o'zgartirildi
         response = client.models.generate_content(
             model='gemini-3.5-flash',
             contents=[
@@ -78,7 +91,13 @@ async def handle_photo(message: Message):
 
 async def main():
     logging.basicConfig(level=logging.INFO)
-    print("Bot Gemini orqali ishga tushdi...")
+    
+    # Flask serverini alohida oqimda (thread) ishga tushiramiz
+    server_thread = Thread(target=run_web)
+    server_thread.daemon = True
+    server_thread.start()
+    
+    print("Bot va veb-server Gemini orqali ishga tushdi...")
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
