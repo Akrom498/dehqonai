@@ -22,7 +22,7 @@ def run_web():
 
 # --- Sizning asl kodingiz ---
 TOKEN = "8626509225:AAG8LAYBMuIX3bUCM87BOxaXjT6CknkB_e8"
-GEMINI_API_KEY = "AQ.Ab8RN6Jg0P3lVs_pG8IM8pVOc_8FHthrl7poLXHvUHrwSH4Orw"
+GEMINI_API_KEY = "AQ.Ab8RN6JTXK7nHGzvnfAC1A0I79zgwcWa0rhUh7HMPZW4Y5XOgA"
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
