@@ -22,7 +22,7 @@ def run_web():
 
 # --- Sizning asl kodingiz ---
 TOKEN = "8626509225:AAG8LAYBMuIX3bUCM87BOxaXjT6CknkB_e8"
-GEMINI_API_KEY = "AQ.Ab8RN6JY74hge4W-MBwJHkYGfmraG0E-5_hw8cINMfK7KJ1kGQ"
+GEMINI_API_KEY = "AQ.Ab8RN6IMetjUzcR-5FfZiaaz1F1PSiBkrjwdKMBHZ4eHAqPYxQ"
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
@@ -63,7 +63,7 @@ async def handle_photo(message: Message):
         img_bytes = img_response.content
 
         response = client.models.generate_content(
-            model='gemini-3.0-flash',
+            model='gemini-2.5-flash',
             contents=[
                 genai_types.Part.from_bytes(
                     data=img_bytes,
