@@ -21,10 +21,15 @@ def run_web():
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
 
 # --- Token va API kalitlarni muhit o'zgaruvchilaridan olish ---
-TOKEN = os.environ.get("8626509225:AAG8LAYBMuIX3bUCM87BOxaXjT6CknkB_e8")
-GEMINI_API_KEY = os.environ.get("AQ.Ab8RN6IMetjUzcR-5FfZiaaz1F1PSiBkrjwdKMBHZ4eHAqPYxQ")
+# --- Token va API kalitlar ---
+TOKEN = "8626509225:AAG8LAYBMuIX3bUCM87BOxaXjT6CknkB_e8"
+GEMINI_API_KEY = "AQ.Ab8RN6IMetjUzcR-5FfZiaaz1F1PSiBkrjwdKMBHZ4eHAqPYxQ"
 
 bot = Bot(token=TOKEN)
+dp = Dispatcher()
+
+
+
 dp = Dispatcher()
 
 # Yangi kutubxona uchun to'g'ri ulanish
