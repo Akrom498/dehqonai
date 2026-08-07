@@ -20,7 +20,7 @@ def run_web():
 
 # --- TOKEN VA KALITLAR ---
 TOKEN = "8626509225:AAENEY4NLdtayeDyuWBLtvq9_v6Sto9DXeI"
-GEMINI_API_KEY = "AQ.Ab8RN6IMetjUzcR-5FfZiaaz1F1PSiBkrjwdKMBHZ4eHAqPYxQ"
+GEMINI_API_KEY = "AQ.Ab8RN6J24LeaPUZ3gbdlQXdK9-FN5zUxhaoPR8ByYOh3NfgpSQ"
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
