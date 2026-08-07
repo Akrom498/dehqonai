@@ -19,7 +19,7 @@ def run_web():
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
 
 # --- TOKEN VA KALITLAR ---
-TOKEN = "8626509225:AAG8LAYBMuIX3bUCM87BOxaXjT6CknkB_e8"
+TOKEN = "8626509225:AAENEY4NLdtayeDyuWBLtvq9_v6Sto9DXeI"
 GEMINI_API_KEY = "AQ.Ab8RN6IMetjUzcR-5FfZiaaz1F1PSiBkrjwdKMBHZ4eHAqPYxQ"
 
 bot = Bot(token=TOKEN)
