@@ -63,7 +63,7 @@ async def handle_photo(message: Message):
         img_bytes = img_response.content
 
         response = client.models.generate_content(
-            model='gemini-3.5-flash',
+            model='gemini-3.0-flash',
             contents=[
                 genai_types.Part.from_bytes(
                     data=img_bytes,
