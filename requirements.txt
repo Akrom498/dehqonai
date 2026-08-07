@@ -1,4 +1,4 @@
 aiogram
 flask
-google-genai
+google-generativeai
 requests
